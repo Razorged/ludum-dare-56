@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Critter
   - Obstacle
+  - KillBox
   layers:
   - Default
   - TransparentFX

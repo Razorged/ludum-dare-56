@@ -63,4 +63,9 @@ public class CritterBehaviour : MonoBehaviour
         }
     }
 
+    public void KillCritter()
+    {
+        Destroy(gameObject);
+    }
+
 }
