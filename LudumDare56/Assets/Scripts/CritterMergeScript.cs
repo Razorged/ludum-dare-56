@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CritterMergeScript : MonoBehaviour
 {
-    private bool isGlued = false;
+    public bool isGlued = false;
     public GameObject critterBall;
     // Start is called before the first frame update
     void Start()
@@ -57,10 +57,7 @@ public class CritterMergeScript : MonoBehaviour
     {
         Debug.Log("ParentMerge");
         PutCritterOnBall(gameObject, otherCritter);
-        otherCritter.transform.SetParent(gameObject.transform);
         DisableParameters(otherCritter);
-        otherCritter.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        otherCritter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         EnableCritterBall();
         DisableParameters(gameObject);
     }
@@ -69,9 +66,6 @@ public class CritterMergeScript : MonoBehaviour
     {
         Debug.Log("ChildMerge");
         PutCritterOnBall(critterBall, gameObject);
-        gameObject.transform.SetParent(critterBall.transform);
-        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         critterBall.GetComponent<CritterBallScript>().UpdateCount();
         DisableParameters(gameObject);
     }
@@ -86,6 +80,9 @@ public class CritterMergeScript : MonoBehaviour
         critter.transform.position = new Vector3(Random.Range(resultVector.x -1.5f, resultVector.x + 1.5f), Random.Range(resultVector.y - 1.5f, resultVector.y + 1.5f), 0);
         float randomZRotation = Random.Range(0f, 360f);
         critter.transform.rotation = Quaternion.Euler(0, 0, randomZRotation);
+        critter.transform.SetParent(parent.transform);
+        critter.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        critter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
     private void DisableParameters(GameObject critter)
     {

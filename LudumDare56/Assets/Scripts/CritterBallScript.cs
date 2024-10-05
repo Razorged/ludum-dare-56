@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CritterBallScript : MonoBehaviour
@@ -24,7 +25,7 @@ public class CritterBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnEnable()
@@ -60,6 +61,20 @@ public class CritterBallScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "CritterBall" && gameObject.tag == "CritterBall")
+        {
+            if(collision.gameObject.GetInstanceID() > gameObject.GetInstanceID())
+            {
+                Merge(collision.gameObject);
+            }
+        }
+        if(collision.gameObject.tag == "UnmergeBullet" && gameObject.tag == "CritterBall")
+        {
+            UnMerge();
+        }
+    }
     public void Initialize()
     {
         Debug.Log(gameObject.name);
@@ -74,4 +89,73 @@ public class CritterBallScript : MonoBehaviour
         count = gameObject.transform.childCount + 1;
         textMeshPro.text = count.ToString();
     }
+
+    private void Merge(GameObject critterBall)
+    {
+        foreach(Transform child in critterBall.transform)
+        {
+            child.SetParent(null);
+            PutCritterOnBall(gameObject, child.gameObject);
+        }
+        CircleCollider2D circleCollider2D = critterBall.GetComponent<CircleCollider2D>();
+        circleCollider2D.enabled = false;
+        critterBall.tag = "Critter";
+        critterBall.GetComponent<CritterBallScript>().enabled = false;
+        Destroy(critterBall.GetComponent<CritterBallScript>().textMeshPro.gameObject);
+        PutCritterOnBall(gameObject, critterBall);
+        
+        UpdateCount();
+    }
+
+    private void PutCritterOnBall(GameObject parent, GameObject critter)
+    {
+        Vector3 resultVector = parent.transform.position;
+        critter.transform.position = new Vector3(Random.Range(resultVector.x - 1.5f, resultVector.x + 1.5f), Random.Range(resultVector.y - 1.5f, resultVector.y + 1.5f), 0);
+        float randomZRotation = Random.Range(0f, 360f);
+        critter.transform.rotation = Quaternion.Euler(0, 0, randomZRotation);
+        critter.transform.SetParent(parent.transform);
+        critter.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        critter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    private void UnMerge()
+    {
+        int childCount = gameObject.transform.childCount;
+
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            Transform child = gameObject.transform.GetChild(i);
+            Debug.Log(i.ToString());
+            Debug.Log(child.gameObject.name);
+            child.SetParent(null);
+            EnableParameter(child.gameObject);
+        }
+        //    foreach (Transform child in gameObject.transform)
+        //{
+        //    Debug.Log(child.gameObject.name);
+        //    child.SetParent(null);
+        //    EnableParameter(child.gameObject);
+        //}
+        CircleCollider2D circleCollider2D = gameObject.GetComponent<CircleCollider2D>();
+        circleCollider2D.enabled = false;
+        gameObject.tag = "Critter";
+        gameObject.GetComponent<CritterBallScript>().enabled = false;
+        Destroy(gameObject.GetComponent<CritterBallScript>().textMeshPro.gameObject);
+        EnableParameter(gameObject);
+    }
+
+    private void EnableParameter(GameObject critter)
+    {
+        CritterMergeScript critterMergeScript = critter.GetComponent<CritterMergeScript>();
+        CritterBehaviour critterBehaviour = critter.GetComponent<CritterBehaviour>();
+        BoxCollider2D collider2D = critter.GetComponent<BoxCollider2D>();
+        critterMergeScript.enabled = true;
+        critterMergeScript.isGlued = false;
+        critterBehaviour.enabled = true;
+        collider2D.enabled = true;
+        critter.transform.rotation = Quaternion.Euler(0, 0, 0);
+        critter.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        //critter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
 }
