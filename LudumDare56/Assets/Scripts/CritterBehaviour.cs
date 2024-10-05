@@ -12,6 +12,7 @@ public class CritterBehaviour : MonoBehaviour
     private bool isRunning = false;
     public float movementTimerMax = 3;
     private float movementTimer;
+    
 
     // Start is called before the first frame update
     void Start()

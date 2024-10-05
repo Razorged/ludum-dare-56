@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 754314407225126896}
   - component: {fileID: 2469655311272524812}
   - component: {fileID: 1056876714084096655}
+  - component: {fileID: 5431773172171969531}
+  - component: {fileID: 3625732410253783229}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -79,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.32424328, g: 0.754717, b: 0.32039863, a: 1}
+  m_Color: {r: 0.25394562, g: 0.754717, b: 0.38732204, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -111,7 +113,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6198578002690482009}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -210,6 +212,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5431773172171969531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198578002690482009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20add2ff6e048e458adcb49008d1a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3625732410253783229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198578002690482009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b71a5e782199a4eb2af2aa53d236c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MergeBullet: {fileID: 7090954460140729617, guid: 69a8c8eddbb0a4a4aa439b6f7f1d907e, type: 3}
+  cooldown: 2
+  bulletSpeed: 20
 --- !u!1 &7778760340751699002
 GameObject:
   m_ObjectHideFlags: 0
