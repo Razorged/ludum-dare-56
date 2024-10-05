@@ -33,5 +33,5 @@ public class CritterBehaviour : MonoBehaviour
             rb.AddForce(direction * repellingForce * Time.deltaTime);
         }
     }
-
+    
 }
