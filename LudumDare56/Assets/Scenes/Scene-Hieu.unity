@@ -733,10 +733,6 @@ PrefabInstance:
       value: 0.38732204
       objectReference: {fileID: 0}
     - target: {fileID: 2074809699623330042, guid: e2813796910329649b1148826a7d2938, type: 3}
-      propertyPath: m_Color.g
-      value: 0.754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 2074809699623330042, guid: e2813796910329649b1148826a7d2938, type: 3}
       propertyPath: m_Color.r
       value: 0.25394562
       objectReference: {fileID: 0}
@@ -783,14 +779,6 @@ PrefabInstance:
     - target: {fileID: 6198578002690482009, guid: e2813796910329649b1148826a7d2938, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7770780748266266942, guid: e2813796910329649b1148826a7d2938, type: 3}
-      propertyPath: speed
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7770780748266266942, guid: e2813796910329649b1148826a7d2938, type: 3}
-      propertyPath: moveSpeed
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

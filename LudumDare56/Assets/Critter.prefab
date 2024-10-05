@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7466079663076618783}
   - component: {fileID: 1962872316010329008}
   - component: {fileID: 743365188189447364}
+  - component: {fileID: -8586227254804519710}
+  - component: {fileID: 1116236092692188935}
   m_Layer: 0
   m_Name: Critter
   m_TagString: Critter
@@ -102,7 +104,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 5
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -188,3 +190,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29f2efb8e5737348ba7a24845a42b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  critterBall: {fileID: 8176188520311877700, guid: 5bf8b5d2a665c32459fea6a0c29ea10e, type: 3}
+--- !u!114 &-8586227254804519710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842059709316961584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d417dc5f99d6d4e8b000cc89528782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rb: {fileID: 3870031193016675053}
+  runForce: 20
+  rollForce: 40
+--- !u!58 &1116236092692188935
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842059709316961584}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
