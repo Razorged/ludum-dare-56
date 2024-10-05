@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Critter
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Entity
   - 
   - 
   - 
@@ -39,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 610161177
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

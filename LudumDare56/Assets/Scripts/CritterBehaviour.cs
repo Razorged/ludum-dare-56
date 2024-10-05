@@ -37,7 +37,6 @@ public class CritterBehaviour : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Running");
             Vector3 direction = gameObject.transform.position - player.transform.position;
             float distance = direction.magnitude;
             float repellingForce = runForce / distance;
@@ -56,7 +55,6 @@ public class CritterBehaviour : MonoBehaviour
     {
         if (!isRunning && movementTimer >= movementTimerMax)
         {
-            Debug.Log("Random");
             Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), 0);
             randomDirection = randomDirection.normalized;
             float force = UnityEngine.Random.Range(150f, 300f);
