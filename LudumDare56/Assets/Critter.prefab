@@ -205,8 +205,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 3870031193016675053}
+  textPrefab: {fileID: 4181671009092995992, guid: b8b1477cdc9030e4c936418a20f21b8f, type: 3}
   runForce: 20
   rollForce: 40
+  count: 2
 --- !u!58 &1116236092692188935
 CircleCollider2D:
   m_ObjectHideFlags: 0

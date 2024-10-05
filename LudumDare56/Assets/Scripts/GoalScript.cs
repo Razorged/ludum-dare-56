@@ -21,8 +21,12 @@ public class GoalScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Critter")
         {
-            Debug.Log("Critter");
             logicScript.AddScore();
+        }
+        if(collision.gameObject.tag == "CritterBall")
+        {
+            Debug.Log("aaa");
+            logicScript.AddScore(collision.gameObject.GetComponent<CritterBallScript>().count);
         }
     }
 
@@ -31,6 +35,10 @@ public class GoalScript : MonoBehaviour
         if (collision.gameObject.tag == "Critter")
         {
             logicScript.SubtractScore();
+        }
+        if (collision.gameObject.tag == "CritterBall")
+        {
+            logicScript.SubtractScore(collision.gameObject.GetComponent<CritterBallScript>().count);
         }
     }
 }

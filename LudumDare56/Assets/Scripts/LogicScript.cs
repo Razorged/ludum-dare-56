@@ -25,6 +25,17 @@ public class LogicScript : MonoBehaviour
         UpdateScoreText();
     }
 
+    public void AddScore(int count)
+    {
+        score += count;
+        UpdateScoreText();
+    }
+    public void SubtractScore(int count)
+    {
+        score -= count;
+        UpdateScoreText();
+    }
+
     private void UpdateScoreText()
     {
         textMeshPro.text = score.ToString() + "/" + maxScore.ToString();

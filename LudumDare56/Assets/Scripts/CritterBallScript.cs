@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CritterBallScript : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody2D rb;
+    public GameObject textPrefab;
+    public TextMeshPro textMeshPro;
+
     public int runForce;
     public int rollForce;
+    public int count = 2;
+    private Vector3 textOffset = new Vector3(0, 3f, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -52,5 +58,20 @@ public class CritterBallScript : MonoBehaviour
             float repellingForce = runForce / distance;
             rb.AddTorque(-direction.x * repellingForce * rollForce);
         }
+    }
+
+    public void Initialize()
+    {
+        Debug.Log(gameObject.name);
+        GameObject textObject = Instantiate(textPrefab, gameObject.transform.position + textOffset, Quaternion.identity);
+        textMeshPro = textObject.GetComponent<TextMeshPro>();
+        textObject.GetComponent<FollowCritterBallScript>().CritterBall = gameObject;
+        UpdateCount();
+    }
+
+    public void UpdateCount()
+    {
+        count = gameObject.transform.childCount + 1;
+        textMeshPro.text = count.ToString();
     }
 }

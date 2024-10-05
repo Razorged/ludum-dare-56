@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - KillBox
   - MergeBullet
+  - CritterBall
+  - CritterBallText
   layers:
   - Default
   - TransparentFX

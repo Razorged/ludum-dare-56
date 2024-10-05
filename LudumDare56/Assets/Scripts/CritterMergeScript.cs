@@ -19,38 +19,43 @@ public class CritterMergeScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isGlued)
+        if(gameObject.tag != "CritterBall")
         {
-            if(collision.gameObject.tag == "Critter")
+            if (collision.gameObject.tag == "CritterBall")
             {
-                if (collision.gameObject.GetComponent<CritterMergeScript>().isGlued)
+                ChildMerge(collision.gameObject);
+            }
+            if (isGlued)
+            {
+                if (collision.gameObject.tag == "Critter")
                 {
-                    if(collision.gameObject.GetInstanceID() > gameObject.GetInstanceID())
+                    if (collision.gameObject.GetComponent<CritterMergeScript>().isGlued)
+                    {
+                        if (collision.gameObject.GetInstanceID() > gameObject.GetInstanceID())
+                        {
+                            ParentMerge(collision.gameObject);
+                        }
+                    }
+                    else
                     {
                         ParentMerge(collision.gameObject);
                     }
                 }
-                else
+            }
+            else
+            {
+                if (collision.gameObject.tag == "MergeBullet")
                 {
-                    ParentMerge(collision.gameObject);
+                    GetGlued();
                 }
             }
         }
-        else
-        {
-            if(collision.gameObject.tag == "MergeBullet")
-            {
-                GetGlued();
-            }
-        }
-        if(collision.gameObject.tag == "CritterBall")
-        {
 
-        }
     }
 
     private void ParentMerge(GameObject otherCritter)
-    { 
+    {
+        Debug.Log("ParentMerge");
         PutCritterOnBall(gameObject, otherCritter);
         otherCritter.transform.SetParent(gameObject.transform);
         DisableParameters(otherCritter);
@@ -62,10 +67,12 @@ public class CritterMergeScript : MonoBehaviour
 
     private void ChildMerge(GameObject critterBall)
     {
+        Debug.Log("ChildMerge");
         PutCritterOnBall(critterBall, gameObject);
         gameObject.transform.SetParent(critterBall.transform);
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        critterBall.GetComponent<CritterBallScript>().UpdateCount();
         DisableParameters(gameObject);
     }
 
@@ -98,6 +105,8 @@ public class CritterMergeScript : MonoBehaviour
         circleCollider2D.enabled = true;
         CritterBallScript critterBallScript = gameObject.GetComponent<CritterBallScript>();
         critterBallScript.enabled = true;
+        critterBallScript.Initialize();
+        
     }
 
 }
