@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public int speed = 100;
+    public float moveSpeed = 0.001f;
+    private Vector3 direction;
     
     // Start is called before the first frame update
     void Start()
@@ -16,19 +17,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = CalculateDirection();
-        rb.MovePosition(rb.transform.position + direction*speed*Time.deltaTime);
+        direction = CalculateDirection();
+        
     }
-
-    public void Move()
+    private void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        Vector3 tempVect = new Vector3(h, v, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb.MovePosition(rb.transform.position + tempVect);
+        rb.MovePosition(rb.transform.position + direction * moveSpeed);
     }
+
+    //public void Move()
+    //{
+    //    float h = Input.GetAxis("Horizontal");
+    //    float v = Input.GetAxis("Vertical");
+
+    //    Vector3 tempVect = new Vector3(h, v, 0);
+    //    tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
+    //    rb.MovePosition(rb.transform.position + tempVect);
+    //}
 
     public Vector3 CalculateDirection()
     {
