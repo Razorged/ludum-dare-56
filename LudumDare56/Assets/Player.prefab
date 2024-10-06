@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20add2ff6e048e458adcb49008d1a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mergePowerup: {fileID: 6906664701290452517, guid: 3641e25b37b0df04199115bc52c442c1, type: 3}
+  unmergePowerup: {fileID: 5108016629144081490, guid: 1b7c220be9c5d7c4fab9d967fdbfe47a, type: 3}
   mergeGunScript: {fileID: 3625732410253783229}
   unmergeGunScript: {fileID: 3962028208259649033}
 --- !u!114 &3625732410253783229
