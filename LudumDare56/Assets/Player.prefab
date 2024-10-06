@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1056876714084096655}
   - component: {fileID: 5431773172171969531}
   - component: {fileID: 3625732410253783229}
+  - component: {fileID: 3962028208259649033}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -224,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20add2ff6e048e458adcb49008d1a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mergeGunScript: {fileID: 3625732410253783229}
+  unmergeGunScript: {fileID: 3962028208259649033}
 --- !u!114 &3625732410253783229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +240,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MergeBullet: {fileID: 7090954460140729617, guid: 69a8c8eddbb0a4a4aa439b6f7f1d907e, type: 3}
+  cooldown: 2
+  bulletSpeed: 20
+--- !u!114 &3962028208259649033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198578002690482009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2372d48a1a5fa4892f70e1d747e1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnMergeBullet: {fileID: 7400908662560274919, guid: 515e22d108b21e74995b89262a0d4b98, type: 3}
   cooldown: 2
   bulletSpeed: 20
 --- !u!1 &7778760340751699002
