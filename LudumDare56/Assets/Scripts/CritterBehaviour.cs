@@ -50,6 +50,16 @@ public class CritterBehaviour : MonoBehaviour
             rb.AddForce(direction * repellingForce * Time.deltaTime);
             isRunning = true;
         }
+        
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            Vector3 direction = gameObject.transform.position - collision.gameObject.transform.position;
+            float distance = direction.magnitude;
+            float repellingForce = runForce / distance;
+            direction = direction.normalized;
+            rb.AddForce(direction * repellingForce * Time.deltaTime);
+            isRunning = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
