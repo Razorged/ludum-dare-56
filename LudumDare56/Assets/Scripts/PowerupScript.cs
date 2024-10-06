@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PowerupScript : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip[] sounds;
     public GameObject mergePowerup;
     public GameObject unmergePowerup;
     public MergeGunScript mergeGunScript;
@@ -23,7 +25,8 @@ public class PowerupScript : MonoBehaviour
 
     public void EquipMergeGun()
     {
-        if(unmergeGunScript.enabled == true)
+        PlaySound();
+        if (unmergeGunScript.enabled == true)
         {
             SpawnUnmergePowerup();
         }
@@ -33,7 +36,8 @@ public class PowerupScript : MonoBehaviour
     }
     public void EquipUnMergeGun()
     {
-        if(mergeGunScript.enabled == true)
+        PlaySound();
+        if (mergeGunScript.enabled == true)
         {
             SpawnMergePowerup();
         }
@@ -50,5 +54,13 @@ public class PowerupScript : MonoBehaviour
     {
         unmergePowerup.GetComponent<UnmergePowerupScript>().primed = false;
         Instantiate(unmergePowerup, transform.position, Quaternion.identity);
+    }
+
+    private void PlaySound()
+    {
+        System.Random r = new System.Random();
+        int rInt = r.Next(sounds.Length);
+        audioSource.clip = sounds[rInt];
+        audioSource.Play();
     }
 }
