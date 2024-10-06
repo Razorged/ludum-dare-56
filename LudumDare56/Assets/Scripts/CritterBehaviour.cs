@@ -9,16 +9,18 @@ public class CritterBehaviour : MonoBehaviour
     public GameObject deathParticle;
     public GameObject player;
     public Rigidbody2D rb;
+    public float randomMax;
+    public float randomMin;
     public int runForce;
     private bool isRunning = false;
-    public float movementTimerMax = 3;
+    public float movementTimerMax;
     private float movementTimer;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        movementTimer = UnityEngine.Random.Range(0f, 3f);
+        movementTimer = UnityEngine.Random.Range(0f, movementTimerMax);
         player = GameObject.Find("Player");
     }
 
@@ -59,7 +61,7 @@ public class CritterBehaviour : MonoBehaviour
         {
             Vector3 randomDirection = new Vector3(UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f), 0);
             randomDirection = randomDirection.normalized;
-            float force = UnityEngine.Random.Range(150f, 300f);
+            float force = UnityEngine.Random.Range(randomMin, randomMax);
             rb.AddForce(randomDirection * force);
             movementTimer = 0;
         }
