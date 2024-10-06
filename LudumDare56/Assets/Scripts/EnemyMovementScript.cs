@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovementScript : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
     public List<Vector2> coordinates;
     public float speed;
     private Vector2 target;
@@ -48,6 +49,16 @@ public class EnemyMovementScript : MonoBehaviour
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        }
+
+        float xdir = transform.position.x - target.x;
+        if(xdir < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
         }
 
     }

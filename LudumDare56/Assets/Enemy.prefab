@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4616fed89fbee14da13d7c849dc4e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4798167883334073678}
   coordinates: []
   speed: 5
 --- !u!114 &5469863363138625107
@@ -187,6 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72ec28387531e5488a67219fc86deb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: ebcbc037d5e0ab0409504b0f6c3d9e27, type: 3}
+  - {fileID: 8300000, guid: a1ddd584bec7c6f43a2893e58adf7e38, type: 3}
   deathParticle: {fileID: 8575670825922450509, guid: 59a45678fd1d1dd47b6ffa8d228cb37e, type: 3}
   textPrefab: {fileID: 574667159541327391, guid: dd42c352d911b9f4594e6e89eba4e42d, type: 3}
   textMeshPro: {fileID: 0}
