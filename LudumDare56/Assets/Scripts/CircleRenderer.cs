@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleRenderer : MonoBehaviour
 {
-    public float radius = 5f;
+    public float radius;
     public int segments = 50;
     private LineRenderer lineRenderer;
 
@@ -13,11 +13,10 @@ public class CircleRenderer : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segments + 1;
         lineRenderer.loop = true;
-
         DrawCircle();
     }
 
-    void DrawCircle()
+    public void DrawCircle()
     {
         float angle = 0f;
         for (int i = 0; i <= segments; i++)

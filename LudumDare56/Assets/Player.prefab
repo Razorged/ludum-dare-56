@@ -106,6 +106,9 @@ MonoBehaviour:
   radius: {fileID: 1202013519332952468, guid: 11366f5dd7bc0114c99e8ae91a168b57, type: 3}
   rb: {fileID: 754314407225126896}
   moveSpeed: 0.2
+  crouchSpeed: 0.1
+  repelRadius: 5
+  crouchRepelRadius: 1
 --- !u!50 &754314407225126896
 Rigidbody2D:
   serializedVersion: 4
