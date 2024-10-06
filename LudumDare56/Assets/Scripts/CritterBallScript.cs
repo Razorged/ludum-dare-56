@@ -125,8 +125,6 @@ public class CritterBallScript : MonoBehaviour
         for (int i = childCount - 1; i >= 0; i--)
         {
             Transform child = gameObject.transform.GetChild(i);
-            Debug.Log(i.ToString());
-            Debug.Log(child.gameObject.name);
             child.SetParent(null);
             EnableParameter(child.gameObject);
         }
@@ -156,6 +154,19 @@ public class CritterBallScript : MonoBehaviour
         critter.transform.rotation = Quaternion.Euler(0, 0, 0);
         critter.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         //critter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    public void KillCritterBall()
+    {
+        int childCount = gameObject.transform.childCount;
+
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            Transform child = gameObject.transform.GetChild(i);
+            child.gameObject.GetComponent<CritterBehaviour>().KillCritter();
+        }
+        Destroy(gameObject.GetComponent<CritterBallScript>().textMeshPro.gameObject);
+        gameObject.GetComponent<CritterBehaviour>().KillCritter();
     }
 
 }

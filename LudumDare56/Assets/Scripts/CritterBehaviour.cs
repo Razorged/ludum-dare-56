@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CritterBehaviour : MonoBehaviour
 {
+    public GameObject deathParticle;
     public GameObject player;
     public Rigidbody2D rb;
     public int runForce;
@@ -66,6 +67,8 @@ public class CritterBehaviour : MonoBehaviour
 
     public void KillCritter()
     {
+        GameObject textObject = Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
+        deathParticle.GetComponent<ParticleSystem>().Play();
         Destroy(gameObject);
     }
 

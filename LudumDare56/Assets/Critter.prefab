@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf7c1892fcda444382eb68e17aef726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 8483806170858063302, guid: a5ce54697547cac47b34a9d2197cbecd, type: 3}
   player: {fileID: 0}
   rb: {fileID: 3870031193016675053}
   runForce: 8000
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29f2efb8e5737348ba7a24845a42b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGlued: 0
   critterBall: {fileID: 8176188520311877700, guid: 5bf8b5d2a665c32459fea6a0c29ea10e, type: 3}
 --- !u!114 &-8586227254804519710
 MonoBehaviour:
@@ -206,6 +208,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 3870031193016675053}
   textPrefab: {fileID: 4181671009092995992, guid: b8b1477cdc9030e4c936418a20f21b8f, type: 3}
+  textMeshPro: {fileID: 0}
   runForce: 20
   rollForce: 40
   count: 2
