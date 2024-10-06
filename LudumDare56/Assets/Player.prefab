@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1056876714084096655}
   - component: {fileID: 5431773172171969531}
   - component: {fileID: 3625732410253783229}
-  - component: {fileID: 3962028208259649033}
+  - component: {fileID: 6227543854526352629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -231,7 +231,7 @@ MonoBehaviour:
   mergePowerup: {fileID: 6906664701290452517, guid: 3641e25b37b0df04199115bc52c442c1, type: 3}
   unmergePowerup: {fileID: 5108016629144081490, guid: 1b7c220be9c5d7c4fab9d967fdbfe47a, type: 3}
   mergeGunScript: {fileID: 3625732410253783229}
-  unmergeGunScript: {fileID: 3962028208259649033}
+  unmergeGunScript: {fileID: 6227543854526352629}
 --- !u!114 &3625732410253783229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   MergeBullet: {fileID: 7090954460140729617, guid: 69a8c8eddbb0a4a4aa439b6f7f1d907e, type: 3}
   cooldown: 2
   bulletSpeed: 20
---- !u!114 &3962028208259649033
+--- !u!114 &6227543854526352629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class CritterBehaviour : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip[] deathSounds;
+    public Animator animator;
     private LogicScript logicScript;
     public GameObject deathParticle;
     public GameObject player;
@@ -21,6 +25,7 @@ public class CritterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
         movementTimer = UnityEngine.Random.Range(0f, movementTimerMax);
         player = GameObject.Find("Player");
@@ -49,6 +54,7 @@ public class CritterBehaviour : MonoBehaviour
             direction = direction.normalized;
             rb.AddForce(direction * repellingForce * Time.deltaTime);
             isRunning = true;
+            animator.SetBool("IsRunning", true);
         }
         
         if(collision.gameObject.tag == "Obstacle")
@@ -59,12 +65,14 @@ public class CritterBehaviour : MonoBehaviour
             direction = direction.normalized;
             rb.AddForce(direction * repellingForce * Time.deltaTime);
             isRunning = true;
+            animator.SetBool("IsRunning", true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isRunning = false;
+        animator.SetBool("IsRunning", false);
     }
 
     private void RandomMovement()
@@ -85,6 +93,14 @@ public class CritterBehaviour : MonoBehaviour
         deathParticle.GetComponent<ParticleSystem>().Play();
         logicScript.SubtractCritter();
         Destroy(gameObject);
+    }
+
+    private void PlayDeathSound()
+    {
+        System.Random r = new System.Random();
+        int rInt = r.Next(deathSounds.Length);
+        audioSource.clip = deathSounds[rInt];
+        audioSource.Play();
     }
 
 }
