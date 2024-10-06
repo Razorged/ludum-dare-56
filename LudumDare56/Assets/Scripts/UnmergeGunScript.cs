@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnmergeGunScript : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip[] sounds;
     public GameObject UnMergeBullet;
     public int cooldown = 2;
     public int bulletSpeed;
@@ -26,7 +28,16 @@ public class UnmergeGunScript : MonoBehaviour
         Physics2D.IgnoreCollision(bullet.GetComponent<CapsuleCollider2D>(), gameObject.GetComponent<BoxCollider2D>(), true);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = shootDirection * bulletSpeed;
+        PlaySound();
 
         Destroy(bullet, 5f);
+    }
+
+    private void PlaySound()
+    {
+        System.Random r = new System.Random();
+        int rInt = r.Next(sounds.Length);
+        audioSource.clip = sounds[rInt];
+        audioSource.Play();
     }
 }
