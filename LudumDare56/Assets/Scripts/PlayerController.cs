@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject radius;
     public Rigidbody2D rb;
     public float moveSpeed;
     private Vector3 direction;
@@ -12,7 +13,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject r = Instantiate(radius, gameObject.transform.position, Quaternion.identity);
+        r.GetComponent<CircleRenderer>().radius = gameObject.GetComponent<CircleCollider2D>().radius * Math.Max(transform.localScale.x, transform.localScale.y);
+        r.transform.SetParent(transform);
     }
 
     // Update is called once per frame

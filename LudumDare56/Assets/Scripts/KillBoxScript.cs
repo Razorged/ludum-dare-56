@@ -22,6 +22,7 @@ public class KillBoxScript : MonoBehaviour
         if (collision.gameObject.tag == "Critter")
         {
             collision.gameObject.GetComponent<CritterBehaviour>().KillCritter();
+            
         }
         if(collision.gameObject.tag == "CritterBall")
         {

@@ -7,10 +7,14 @@ public class LogicScript : MonoBehaviour
 {
     private int score = 0;
     public int maxScore = 4;
+    public int critterCount;
     public TextMeshProUGUI textMeshPro;
+    public TextMeshProUGUI critterCountText;
 
     private void Start()
     {
+        critterCount = CountCritters();
+        maxScore = CountCritters();
         UpdateScoreText();
     }
 
@@ -39,7 +43,26 @@ public class LogicScript : MonoBehaviour
     private void UpdateScoreText()
     {
         textMeshPro.text = score.ToString() + "/" + maxScore.ToString();
+        critterCountText.text = critterCount.ToString();
     }
 
+    private int CountCritters()
+    {
+        GameObject[] critterObjects = GameObject.FindGameObjectsWithTag("Critter");
+        GameObject[] critterBallObjects = GameObject.FindGameObjectsWithTag("CritterBall");
+        return critterBallObjects.Length + critterObjects.Length;
+    }
+
+
+    public void SubtractCritter()
+    {
+        critterCount--;
+        UpdateScoreText();
+    }
+    public void AddCritter()
+    {
+        critterCount++;
+        UpdateScoreText();
+    }
 
 }

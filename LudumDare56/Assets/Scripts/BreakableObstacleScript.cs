@@ -13,9 +13,9 @@ public class BreakableObstacleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject textObject = Instantiate(textPrefab, gameObject.transform.position + textOffset, Quaternion.identity);
-        textObject.transform.SetParent(transform);
-        textMeshPro = textObject.GetComponent<TextMeshPro>();
+        GameObject a = Instantiate(textPrefab, gameObject.transform.position + textOffset, Quaternion.identity);
+        a.transform.SetParent(transform);
+        textMeshPro = a.GetComponent<TextMeshPro>();
         textMeshPro.text = count.ToString();
     }
 

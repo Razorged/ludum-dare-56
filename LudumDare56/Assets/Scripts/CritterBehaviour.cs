@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CritterBehaviour : MonoBehaviour
 {
+    private LogicScript logicScript;
     public GameObject deathParticle;
     public GameObject player;
     public Rigidbody2D rb;
@@ -20,6 +21,7 @@ public class CritterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
         movementTimer = UnityEngine.Random.Range(0f, movementTimerMax);
         player = GameObject.Find("Player");
     }
@@ -71,6 +73,7 @@ public class CritterBehaviour : MonoBehaviour
     {
         GameObject textObject = Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
         deathParticle.GetComponent<ParticleSystem>().Play();
+        logicScript.SubtractCritter();
         Destroy(gameObject);
     }
 
