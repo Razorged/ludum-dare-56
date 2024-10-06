@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
     public GameObject radius;
     public Rigidbody2D rb;
     public float moveSpeed;
@@ -80,6 +82,15 @@ public class PlayerController : MonoBehaviour
         {
             direction += Vector3.down;
 
+        }
+        animator.SetFloat("Speed", direction.magnitude);
+        if(direction.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(direction.x < 0)
+        {
+            spriteRenderer.flipX = true;
         }
         return direction.normalized;
     }
