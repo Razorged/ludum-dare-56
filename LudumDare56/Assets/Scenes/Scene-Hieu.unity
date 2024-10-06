@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: speed
-      value: 80
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: coordinates.Array.size
@@ -790,18 +790,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: coordinates.Array.data[1].x
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: coordinates.Array.data[1].y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: coordinates.Array.data[2].x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
       propertyPath: coordinates.Array.data[2].y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
+      propertyPath: coordinates.Array.data[3].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833250118700242895, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
+      propertyPath: coordinates.Array.data[3].y
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8174042537050828751, guid: f7f4bac13cf95de49bb388e8b4c7d3aa, type: 3}
