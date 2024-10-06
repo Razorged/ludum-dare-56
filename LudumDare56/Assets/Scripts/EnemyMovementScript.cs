@@ -18,6 +18,7 @@ public class EnemyMovementScript : MonoBehaviour
         }
         else
         {
+            target = coordinates[targetIndex];
             maxIndex = coordinates.Count - 1;
         }
 
@@ -31,10 +32,6 @@ public class EnemyMovementScript : MonoBehaviour
 
     private void Patrol()
     {
-        if(target == null)
-        {
-            target = coordinates[targetIndex];
-        }
 
         if(transform.position == new Vector3(target.x, target.y, 0))
         {
