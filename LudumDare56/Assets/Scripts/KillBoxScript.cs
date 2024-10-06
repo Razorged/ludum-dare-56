@@ -28,4 +28,15 @@ public class KillBoxScript : MonoBehaviour
             collision.gameObject.GetComponent<CritterBallScript>().KillCritterBall();
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Critter")
+        {
+            collision.gameObject.GetComponent<CritterBehaviour>().KillCritter();
+        }
+        if (collision.gameObject.tag == "CritterBall")
+        {
+            collision.gameObject.GetComponent<CritterBallScript>().KillCritterBall();
+        }
+    }
 }
