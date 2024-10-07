@@ -18,13 +18,9 @@ public class LogicScript : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         critterCount = CountCritters();
         UpdateScoreText();
-
-        isPaused = false;
-        Time.timeScale = 1;
-        gameIcons.SetActive(true);
-        menu.SetActive(false);
     }
 
     private void Update()
