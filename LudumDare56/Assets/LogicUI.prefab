@@ -505,6 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8084360104299171926}
   - component: {fileID: 2859541008835249996}
+  - component: {fileID: 2712614178774748477}
   m_Layer: 0
   m_Name: Logic Manager
   m_TagString: Untagged
@@ -539,12 +540,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b098c3c5b50a31646959e396326ec3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script: {fileID: 2712614178774748477}
   menu: {fileID: 18875570022647585}
   gameIcons: {fileID: 2733601483498599896}
   maxScore: 4
   critterCount: 0
   textMeshPro: {fileID: 6917818639532174736}
   critterCountText: {fileID: 9116477174238563558}
+--- !u!114 &2712614178774748477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560602160209399691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddcfa0bbc190b648bac5ea91dd1e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noneEquippedPanel: {fileID: 6467911577360787027}
+  glueGunEquippedPanel: {fileID: 4216825683685490710}
+  unglueGunEquippedPanel: {fileID: 1329067981497817158}
 --- !u!1 &692972844130838401
 GameObject:
   m_ObjectHideFlags: 0

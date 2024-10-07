@@ -10,9 +10,11 @@ public class PowerupScript : MonoBehaviour
     public GameObject unmergePowerup;
     public MergeGunScript mergeGunScript;
     public UnmergeGunScript unmergeGunScript;
+    public LogicScript logicScript;
     // Start is called before the first frame update
     void Start()
     {
+        logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
         mergeGunScript.enabled = false;
         unmergeGunScript.enabled = false;
     }
@@ -25,6 +27,7 @@ public class PowerupScript : MonoBehaviour
 
     public void EquipMergeGun()
     {
+        logicScript.script.setGlueGunActive();
         PlaySound();
         if (unmergeGunScript.enabled == true)
         {
@@ -36,6 +39,7 @@ public class PowerupScript : MonoBehaviour
     }
     public void EquipUnMergeGun()
     {
+        logicScript.script.setUnglueGunActive();
         PlaySound();
         if (mergeGunScript.enabled == true)
         {

@@ -5,6 +5,7 @@ using TMPro;
 
 public class LogicScript : MonoBehaviour
 {
+    public MainMenuButtonScript script;
     public GameObject menu;
     public GameObject gameIcons;
     private int score = 0;
