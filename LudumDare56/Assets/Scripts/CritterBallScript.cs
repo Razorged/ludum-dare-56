@@ -140,6 +140,7 @@ public class CritterBallScript : MonoBehaviour
         gameObject.GetComponent<CritterBallScript>().enabled = false;
         Destroy(gameObject.GetComponent<CritterBallScript>().textMeshPro.gameObject);
         EnableParameter(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;  
     }
 
     private void EnableParameter(GameObject critter)

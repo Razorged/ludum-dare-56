@@ -29,7 +29,7 @@ public class BreakableObstacleScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "CritterBall")
         {
-            if(collision.gameObject.GetComponent<CritterBallScript>().count >= count)
+            if(collision.gameObject.GetComponent<CritterBallScript>().count == count)
             {
                 Break();
             }

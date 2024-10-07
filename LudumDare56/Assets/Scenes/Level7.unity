@@ -3473,6 +3473,10 @@ PrefabInstance:
       propertyPath: count
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1403616901210985786, guid: c47ce340c0b690e408522503a138e7c3, type: 3}
+      propertyPath: textOffset.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2238072083040416498, guid: c47ce340c0b690e408522503a138e7c3, type: 3}
       propertyPath: m_Name
       value: BreakableObstacle
@@ -5017,6 +5021,10 @@ PrefabInstance:
     - target: {fileID: 974312691151438488, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: nextSceneName
+      value: Level8
       objectReference: {fileID: 0}
     - target: {fileID: 3224450268830330036, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: m_Name
