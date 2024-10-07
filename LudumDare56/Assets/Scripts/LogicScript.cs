@@ -5,6 +5,7 @@ using TMPro;
 
 public class LogicScript : MonoBehaviour
 {
+    public string nextSceneName;
     public MainMenuButtonScript script;
     public GameObject menu;
     public GameObject gameIcons;
@@ -86,7 +87,7 @@ public class LogicScript : MonoBehaviour
 
     private void Win()
     {
-
+        script.GoToScene(nextSceneName);
     }
 
     private void SwitchMenu()
