@@ -135,8 +135,8 @@ MonoBehaviour:
   deathParticle: {fileID: 8483806170858063302, guid: a5ce54697547cac47b34a9d2197cbecd, type: 3}
   player: {fileID: 0}
   rb: {fileID: 3870031193016675053}
-  randomMax: 500
-  randomMin: 200
+  randomMax: 400
+  randomMin: 100
   runForce: 8000
   movementTimerMax: 2
 --- !u!61 &1962872316010329008
@@ -216,7 +216,7 @@ MonoBehaviour:
   textPrefab: {fileID: 4181671009092995992, guid: b8b1477cdc9030e4c936418a20f21b8f, type: 3}
   textMeshPro: {fileID: 0}
   runForce: 20
-  rollForce: 40
+  rollForce: 20
   count: 2
 --- !u!58 &1116236092692188935
 CircleCollider2D:
