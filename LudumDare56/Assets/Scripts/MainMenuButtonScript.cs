@@ -24,6 +24,7 @@ public class MainMenuButtonScript : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void GoToMainMenu()

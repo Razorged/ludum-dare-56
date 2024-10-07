@@ -5,19 +5,37 @@ using TMPro;
 
 public class LogicScript : MonoBehaviour
 {
+    public GameObject menu;
+    public GameObject gameIcons;
     private int score = 0;
-    public int maxScore = 4;
+    public int maxScore;
     public int critterCount;
     public TextMeshProUGUI textMeshPro;
     public TextMeshProUGUI critterCountText;
+    private bool isPaused = false;
 
     private void Start()
     {
         critterCount = CountCritters();
-        maxScore = CountCritters();
         UpdateScoreText();
+
+        isPaused = false;
+        Time.timeScale = 1;
+        gameIcons.SetActive(true);
+        menu.SetActive(false);
     }
 
+    private void Update()
+    {
+        if(score >= maxScore)
+        {
+            Win();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SwitchMenu();
+        }
+    }
     public void AddScore()
     {
         score++;
@@ -42,7 +60,7 @@ public class LogicScript : MonoBehaviour
 
     private void UpdateScoreText()
     {
-        textMeshPro.text = score.ToString() + "/" + maxScore.ToString();
+        textMeshPro.text = "Cats herded " + score.ToString() + "/" + maxScore.ToString();
         critterCountText.text = critterCount.ToString();
     }
 
@@ -63,6 +81,29 @@ public class LogicScript : MonoBehaviour
     {
         critterCount++;
         UpdateScoreText();
+    }
+
+    private void Win()
+    {
+
+    }
+
+    private void SwitchMenu()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1;
+            gameIcons.SetActive(true);
+            menu.SetActive(false);
+        }
+        else
+        {
+            isPaused = true;
+            Time.timeScale = 0;
+            gameIcons.SetActive(false);
+            menu.SetActive(true);
+        }
     }
 
 }
