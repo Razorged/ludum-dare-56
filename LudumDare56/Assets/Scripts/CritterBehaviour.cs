@@ -69,11 +69,12 @@ public class CritterBehaviour : MonoBehaviour
         
         if(collision.gameObject.tag == "Obstacle")
         {
-            Vector3 direction = gameObject.transform.position - collision.gameObject.transform.position;
+            
+            Vector3 direction = gameObject.transform.position - (Vector3)collision.ClosestPoint(transform.position);
             float distance = direction.magnitude;
             float repellingForce = runForce / distance;
             direction = direction.normalized;
-            rb.AddForce(direction * repellingForce * Time.deltaTime);
+            rb.AddForce(direction * repellingForce * Time.deltaTime / 2);
             isRunning = true;
             animator.SetBool("IsRunning", true);
 
