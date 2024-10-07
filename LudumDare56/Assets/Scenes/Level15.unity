@@ -3553,7 +3553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 743365188189447364, guid: 001171a6781a2b64bbc86c9088ff028a, type: 3}
       propertyPath: isGlued
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 993785750252079607, guid: 001171a6781a2b64bbc86c9088ff028a, type: 3}
       propertyPath: m_LocalScale.x
