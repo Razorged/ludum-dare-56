@@ -1419,11 +1419,8 @@ PrefabInstance:
         Cats run away
         from you as indicated by the radius around you.
 
-        You can hold Ctrl
-        to lower that radius and sneak.
-
-        Your goal is to herd the cats into
-        the highlighted patch of grass.'
+        Your goal is to
+        herd the cats into the highlighted patch of grass.'
       objectReference: {fileID: 0}
     - target: {fileID: 5537556017474854329, guid: 3f3063e97072c7345917d40023828ce0, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1907,6 +1904,14 @@ PrefabInstance:
     - target: {fileID: 974312691151438488, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: maxScore
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: nextSceneName
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 3224450268830330036, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: m_Name
