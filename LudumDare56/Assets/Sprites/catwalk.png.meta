@@ -104,8 +104,8 @@ TextureImporter:
         y: 216
         width: 312
         height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50091106, y: 0.4976307}
       border: {x: 0, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
@@ -138,6 +138,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: catwalk_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 167
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 16, z: 6, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3f6a905b5e5bf48bd173413e290bdf
+      internalID: -207357299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -151,6 +172,7 @@ TextureImporter:
     nameFileIdTable:
       catwalk_0: 1460962733
       catwalk_1: -2098540500
+      catwalk_2: -207357299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
