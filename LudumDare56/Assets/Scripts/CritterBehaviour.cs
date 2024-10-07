@@ -8,8 +8,6 @@ using UnityEngine;
 public class CritterBehaviour : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
-    public AudioSource audioSource;
-    public AudioClip[] deathSounds;
     public Animator animator;
     private LogicScript logicScript;
     public GameObject deathParticle;
@@ -26,7 +24,6 @@ public class CritterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GameObject.Find("AudioSource").GetComponent<AudioSource>();
         logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
         movementTimer = UnityEngine.Random.Range(0f, movementTimerMax);
         player = GameObject.Find("Player");
@@ -115,16 +112,9 @@ public class CritterBehaviour : MonoBehaviour
         GameObject textObject = Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
         deathParticle.GetComponent<ParticleSystem>().Play();
         logicScript.SubtractCritter();
-        PlayDeathSound();
         Destroy(gameObject);
     }
 
-    private void PlayDeathSound()
-    {
-        System.Random r = new System.Random();
-        int rInt = r.Next(deathSounds.Length);
-        audioSource.clip = deathSounds[rInt];
-        audioSource.Play();
-    }
+
 
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyKillScript : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip[] deathSounds;
     public GameObject deathParticle;
     public GameObject textPrefab;
     public TextMeshPro textMeshPro;
@@ -16,7 +14,6 @@ public class EnemyKillScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GameObject.Find("AudioSource").GetComponent<AudioSource>();
         logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
         GameObject a = Instantiate(textPrefab, gameObject.transform.position + textOffset, Quaternion.identity);
         a.transform.SetParent(transform);
@@ -54,16 +51,8 @@ public class EnemyKillScript : MonoBehaviour
     {
         GameObject textObject = Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
         deathParticle.GetComponent<ParticleSystem>().Play();
-        PlayDeathSound();
         Destroy(gameObject);
     }
 
-    private void PlayDeathSound()
-    {
-        System.Random r = new System.Random();
-        int rInt = r.Next(deathSounds.Length);
-        audioSource.clip = deathSounds[rInt];
-        audioSource.Play();
-    }
 
 }

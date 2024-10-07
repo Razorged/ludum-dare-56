@@ -109,8 +109,8 @@ public class CritterBallScript : MonoBehaviour
 
     private void PutCritterOnBall(GameObject parent, GameObject critter)
     {
-        Vector3 resultVector = parent.transform.position;
-        critter.transform.position = new Vector3(Random.Range(resultVector.x - 1.5f, resultVector.x + 1.5f), Random.Range(resultVector.y - 1.5f, resultVector.y + 1.5f), 0);
+        Vector3 resultVector = parent.transform.localPosition;
+        critter.transform.localPosition = new Vector3(Random.Range(resultVector.x - 0.5f, resultVector.x + 0.5f), Random.Range(resultVector.y - 0.5f, resultVector.y + 0.5f), 0);
         float randomZRotation = Random.Range(0f, 360f);
         critter.transform.rotation = Quaternion.Euler(0, 0, randomZRotation);
         critter.transform.SetParent(parent.transform);

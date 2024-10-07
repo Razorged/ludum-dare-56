@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class CritterMergeScript : MonoBehaviour
 {
+    public SpriteRenderer SpriteRenderer;
     public bool isGlued = false;
     public GameObject critterBall;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (isGlued)
+        {
+            SpriteRenderer.color = Color.yellow;
+        }
+        else
+        {
+            SpriteRenderer.color = Color.white;
+        }
     }
 
     // Update is called once per frame
@@ -48,6 +56,11 @@ public class CritterMergeScript : MonoBehaviour
                 {
                     GetGlued();
                 }
+
+                if (collision.gameObject.tag == "UnmergeBullet")
+                {
+                    GetUnglued();
+                }
             }
         }
 
@@ -73,6 +86,13 @@ public class CritterMergeScript : MonoBehaviour
     private void GetGlued()
     {
         isGlued = true;
+        SpriteRenderer.color = Color.yellow;
+    }
+
+    private void GetUnglued()
+    {
+        isGlued = false;
+        SpriteRenderer.color = Color.white;
     }
     private void PutCritterOnBall(GameObject parent, GameObject critter)
     {

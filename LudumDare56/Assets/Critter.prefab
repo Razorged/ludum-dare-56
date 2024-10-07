@@ -131,12 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5580359496664979438}
-  audioSource: {fileID: 0}
-  deathSounds:
-  - {fileID: 8300000, guid: 7efdf442b4331a54fa429981176d8839, type: 3}
-  - {fileID: 8300000, guid: cc1fcd2a000675d4ea71f91af585bbda, type: 3}
-  - {fileID: 8300000, guid: 9eef6dc351a51194592a1dac79865fe6, type: 3}
-  - {fileID: 8300000, guid: be33389a033f5364aa69072cf1425979, type: 3}
   animator: {fileID: 1498486951490570495}
   deathParticle: {fileID: 8483806170858063302, guid: a5ce54697547cac47b34a9d2197cbecd, type: 3}
   player: {fileID: 0}
@@ -202,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29f2efb8e5737348ba7a24845a42b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 5580359496664979438}
   isGlued: 0
   critterBall: {fileID: 8176188520311877700, guid: 5bf8b5d2a665c32459fea6a0c29ea10e, type: 3}
 --- !u!114 &-8586227254804519710

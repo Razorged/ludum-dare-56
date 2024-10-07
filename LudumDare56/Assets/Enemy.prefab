@@ -152,7 +152,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: ebcbc037d5e0ab0409504b0f6c3d9e27, type: 3}
   - {fileID: 8300000, guid: a1ddd584bec7c6f43a2893e58adf7e38, type: 3}
-  deathParticle: {fileID: 8575670825922450509, guid: 59a45678fd1d1dd47b6ffa8d228cb37e, type: 3}
+  deathParticle: {fileID: 8483806170858063302, guid: 1c8be31ab7fd8184d9d18e36313b5580, type: 3}
   textPrefab: {fileID: 574667159541327391, guid: dd42c352d911b9f4594e6e89eba4e42d, type: 3}
   textMeshPro: {fileID: 0}
   logicScript: {fileID: 0}
