@@ -29,6 +29,7 @@ public class MainMenuButtonScript : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Debug.Log("aaa");
         SceneManager.LoadScene("MainMenu");
     }
 

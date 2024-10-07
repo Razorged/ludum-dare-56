@@ -3494,6 +3494,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: maxScore
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: nextSceneName
       value: Level14
       objectReference: {fileID: 0}
