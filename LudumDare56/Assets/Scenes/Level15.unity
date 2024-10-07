@@ -4561,6 +4561,10 @@ PrefabInstance:
       propertyPath: maxScore
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: nextSceneName
+      value: Congratulation
+      objectReference: {fileID: 0}
     - target: {fileID: 3224450268830330036, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: m_Name
       value: LogicUI
