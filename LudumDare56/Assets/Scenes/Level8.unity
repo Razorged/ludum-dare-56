@@ -5492,6 +5492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1241938391210280625, guid: 4588cab92b301ba498308ca15309227c, type: 3}
+      propertyPath: m_text
+      value: Cats are increasingly difficult
+      objectReference: {fileID: 0}
     - target: {fileID: 2859541008835249996, guid: 4588cab92b301ba498308ca15309227c, type: 3}
       propertyPath: nextSceneName
       value: Level9
