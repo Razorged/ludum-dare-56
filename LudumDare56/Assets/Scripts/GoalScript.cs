@@ -25,7 +25,6 @@ public class GoalScript : MonoBehaviour
         }
         if(collision.gameObject.tag == "CritterBall")
         {
-            Debug.Log("aaa");
             logicScript.AddScore(collision.gameObject.GetComponent<CritterBallScript>().count);
         }
     }

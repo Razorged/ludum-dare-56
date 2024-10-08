@@ -42,6 +42,10 @@ public class LogicScript : MonoBehaviour
     public void SubtractScore()
     {
         score--;
+        if (score < 0)
+        {
+            score = 0;
+        }
         UpdateScoreText();
     }
 
@@ -53,6 +57,10 @@ public class LogicScript : MonoBehaviour
     public void SubtractScore(int count)
     {
         score -= count;
+        if (score < 0)
+        {
+            score = 0;
+        }
         UpdateScoreText();
     }
 

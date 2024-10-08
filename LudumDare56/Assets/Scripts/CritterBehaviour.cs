@@ -63,11 +63,14 @@ public class CritterBehaviour : MonoBehaviour
                 spriteRenderer.flipX = true;
             }
         }
-        
-        if(collision.gameObject.tag == "Obstacle")
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
         {
-            
-            Vector3 direction = gameObject.transform.position - (Vector3)collision.ClosestPoint(transform.position);
+
+            Vector3 direction = gameObject.transform.position - (Vector3)collision.GetContact(collision.contactCount/2).point;
             float distance = direction.magnitude;
             float repellingForce = runForce / distance;
             direction = direction.normalized;
@@ -84,9 +87,6 @@ public class CritterBehaviour : MonoBehaviour
                 spriteRenderer.flipX = true;
             }
         }
-
-        
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
